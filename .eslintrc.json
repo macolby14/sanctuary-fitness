@@ -20,9 +20,19 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+        "import/extensions": ["error", "ignorePackages", {
+            "tsx": "never"
+        }]
       },
     "globals": {
         "React": "writable"
+    },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+           }
+        }
     }
 }
