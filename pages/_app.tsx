@@ -3,13 +3,12 @@
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Container } from '@material-ui/core';
-
-import '../styles/globals.css';
+import { Container, CssBaseline } from '@material-ui/core';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <CssBaseline />
       <Head>
         <title>Inner Sanctuary Fitness</title>
         <link rel="icon" href="/favicon.ico" />
