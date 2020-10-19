@@ -3,6 +3,7 @@
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Container } from '@material-ui/core';
 
 import '../styles/globals.css';
 
@@ -15,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <h1>Header goes here</h1>
       <main>
-        <Component {...pageProps} />
+        <Container maxWidth="lg" disableGutters>
+          <Component {...pageProps} />
+        </Container>
       </main>
       <footer><h2>Footer goes here</h2></footer>
     </>
