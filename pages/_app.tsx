@@ -5,6 +5,8 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Container, CssBaseline } from '@material-ui/core';
 
+import MyAppBar from '../components/my-app-bar';
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -13,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Inner Sanctuary Fitness</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Header goes here</h1>
+      <MyAppBar />
       <main>
         <Container maxWidth="lg" disableGutters>
           <Component {...pageProps} />
