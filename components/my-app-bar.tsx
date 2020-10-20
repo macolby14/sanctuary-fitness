@@ -74,8 +74,8 @@ export default function MyAppBar() {
       onClose={handleMobileMenuClose}
     >
       {pages.map((page) => (
-        <MenuItem key={page.text}>
-          <p>{page.text}</p>
+        <MenuItem key={page.text} onClick={handleMobileMenuClose}>
+          <Link href={page.link}>{page.text}</Link>
         </MenuItem>
       ))}
     </Menu>
