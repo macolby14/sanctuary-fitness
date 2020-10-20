@@ -2,6 +2,7 @@ import {
   AppBar, Container, Typography, Button,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import Link from './link';
 
@@ -24,7 +25,21 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   navButton: {
-    color: theme.palette.primary.contrastText,
+    // color: theme.palette.primary.contrastText,
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
   },
 }));
 
@@ -36,10 +51,15 @@ export default function MyAppBar() {
       <Container className={classes.container}>
         <img className={classes.img} src="static/images/inner_sanct_logo_50px.png" alt="Inner Sanctuary" />
         <Typography className={classes.title} variant="h6">Inner Sanctuary Fitness</Typography>
-        <Button className={classes.navButton} component={Link} href="/">Try It Now</Button>
-        <Button className={classes.navButton} href="/">Classes</Button>
-        <Button className={classes.navButton}>About Me</Button>
-        <Button className={classes.navButton}>Contact Us</Button>
+        <div className={classes.sectionDesktop}>
+          <Button color="inherit" component={Link} href="/">Try It Now</Button>
+          <Button color="inherit" component={Link} href="/">Classes</Button>
+          <Button color="inherit" component={Link} href="/">About Me</Button>
+          <Button color="inherit" component={Link} href="/">Contact Us</Button>
+        </div>
+        <div className={classes.sectionMobile}>
+          <MenuIcon color="inherit" />
+        </div>
       </Container>
     </AppBar>
   );
