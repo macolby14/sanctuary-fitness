@@ -1,6 +1,8 @@
-import { Container, Typography } from '@material-ui/core';
+import { Container, Typography, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import InstagramIcon from '@material-ui/icons/Instagram';
+
+import Link from './link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  iconButton: {
+    color: theme.palette.primary.contrastText,
+  },
 }));
 
 export default function Footer() {
@@ -30,18 +35,20 @@ export default function Footer() {
     <footer className={classes.root}>
       <Container className={classes.container}>
         <div className={classes.footerBox}>
-          <Typography variant="subtitle1">CONTACT US</Typography>
+          <Typography variant="subtitle1"><Link href="/contact" color="inherit">CONTACT US</Link></Typography>
           <Typography>kkcolby14@gmail.com</Typography>
           <Typography>(909) 835-5001</Typography>
         </div>
         <div className={classes.footerBox}>
-          <Typography>Classes</Typography>
-          <Typography>About Me</Typography>
-          <Typography>Pietra Fitness</Typography>
+          <Typography><Link href="/classes" color="inherit">Classes</Link></Typography>
+          <Typography><Link href="/about" color="inherit">About Us</Link></Typography>
+          <Typography>
+            <Link href="https://pietrafitness.com/" color="inherit">Pietra Fitness</Link>
+          </Typography>
         </div>
         <div className={classes.footerBox}>
-          <Typography variant="subtitle1">Our Instagram</Typography>
-          <InstagramIcon />
+          <Typography variant="subtitle1">Follow Us</Typography>
+          <IconButton className={classes.iconButton} component={Link} href="https://www.instagram.com/innersanctuaryfitness/"><InstagramIcon /></IconButton>
         </div>
       </Container>
     </footer>
