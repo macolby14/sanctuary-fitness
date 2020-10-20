@@ -41,6 +41,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const pages = [
+  { text: 'Try It Now', link: '/classes' },
+  { text: 'Classes', link: '/classes' },
+  { text: 'About Us', link: '/about' },
+  { text: 'Contact Us', link: '/contact' },
+];
+
 export default function MyAppBar() {
   const classes = useStyles();
 
@@ -66,18 +73,11 @@ export default function MyAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <p>Try It Now</p>
-      </MenuItem>
-      <MenuItem>
-        <p>Classes</p>
-      </MenuItem>
-      <MenuItem>
-        <p>About Me</p>
-      </MenuItem>
-      <MenuItem>
-        <p>Contact Us</p>
-      </MenuItem>
+      {pages.map((page) => (
+        <MenuItem key={page.text}>
+          <p>{page.text}</p>
+        </MenuItem>
+      ))}
     </Menu>
   );
 
@@ -88,10 +88,11 @@ export default function MyAppBar() {
           <img className={classes.img} src="static/images/inner_sanct_logo_50px.png" alt="Inner Sanctuary" />
           <Typography className={classes.title} variant="h6">Inner Sanctuary Fitness</Typography>
           <div className={classes.sectionDesktop}>
-            <Button color="inherit" component={Link} href="/">Try It Now</Button>
-            <Button color="inherit" component={Link} href="/">Classes</Button>
-            <Button color="inherit" component={Link} href="/">About Me</Button>
-            <Button color="inherit" component={Link} href="/">Contact Us</Button>
+            {pages.map((page) => (
+              <Button key={page.text} color="inherit" component={Link} href={page.link}>
+                {page.text}
+              </Button>
+            ))}
           </div>
           <div className={classes.sectionMobile}>
             <IconButton color="inherit" onClick={handleMobileMenuOpen}>
