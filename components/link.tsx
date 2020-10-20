@@ -62,6 +62,7 @@ function Link(props: LinkProps) {
 
   return (
     <MuiLink
+      style={{ textDecoration: 'none' }} 
       component={NextComposed}
       className={className}
       ref={innerRef}
