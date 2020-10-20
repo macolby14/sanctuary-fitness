@@ -85,8 +85,10 @@ export default function MyAppBar() {
     <>
       <AppBar className={classes.root} position="sticky">
         <Container className={classes.container}>
-          <img className={classes.img} src="static/images/inner_sanct_logo_50px.png" alt="Inner Sanctuary" />
-          <Typography className={classes.title} variant="h6">Inner Sanctuary Fitness</Typography>
+          <Button component={Link} href="/" disableRipple>
+            <img className={classes.img} src="static/images/inner_sanct_logo_50px.png" alt="Inner Sanctuary" />
+          </Button>
+          <Typography className={classes.title} variant="h6"><Link color="inherit" href="/">Inner Sanctuary Fitness</Link></Typography>
           <div className={classes.sectionDesktop}>
             {pages.map((page) => (
               <Button key={page.text} color="inherit" component={Link} href={page.link}>
