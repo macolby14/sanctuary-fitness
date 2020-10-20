@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <Head>
         <title>Inner Sanctuary Fitness</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <MyAppBar />
       <main>
