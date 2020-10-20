@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <CssBaseline />
         <MyAppBar />
         <main>
-          <Container maxWidth="lg" disableGutters>
+          <Container maxWidth="lg">
             <Component {...pageProps} />
           </Container>
         </main>

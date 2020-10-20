@@ -33,7 +33,7 @@ export default function MyAppBar() {
 
   return (
     <AppBar className={classes.root} position="sticky">
-      <Container disableGutters className={classes.container}>
+      <Container className={classes.container}>
         <img className={classes.img} src="static/images/inner_sanct_logo_50px.png" alt="Inner Sanctuary" />
         <Typography className={classes.title} variant="h6">Inner Sanctuary Fitness</Typography>
         <Button className={classes.navButton} component={Link} href="/">Try It Now</Button>
