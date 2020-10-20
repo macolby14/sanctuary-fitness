@@ -7,6 +7,7 @@ import { Container, CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import MyAppBar from '../components/my-app-bar';
+import Footer from '../components/footer';
 import theme from '../styles/theme.js';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -33,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </Container>
         </main>
-        <footer><h2>Footer goes here</h2></footer>
+        <Footer />
       </ThemeProvider>
     </>
   );
