@@ -3,11 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
 
 const useStyles = makeStyles(() => ({
-  heroImage: {
-    maxWidth: '100%',
-    height: 'auto',
-    margin: '20px',
-  },
 }));
 
 export default function HeroBox() {
@@ -15,7 +10,7 @@ export default function HeroBox() {
 
   return (
     <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems="center">
-      <Image className={classes.heroImage} src="static/images/inner_sanct_logo_250px.png" alt="Inner Sanctuary" height={250} width={250} />
+      <Image src="/static/images/inner_sanct_logo_250px.png" alt="Inner Sanctuary" height={250} width={250} />
       <Box display="flex" alignItems="center" flexDirection="column">
         <Typography variant="h2">Inner Sancutary Fitness</Typography>
         <Typography variant="h6">
