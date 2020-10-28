@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1, 2),
   },
+  marginTop: {
+    marginTop: theme.spacing() * 2,
+  },
 }));
 
 export default function Home() {
