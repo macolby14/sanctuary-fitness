@@ -15,8 +15,12 @@ const useStyles = makeStyles((theme) => ({
   container: {
     flexGrow: 1,
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'center',
     alignContent: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column-reverse',
+    },
   },
   footerBox: {
     flexGrow: 1,
@@ -24,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing() * 2,
+    },
   },
   iconButton: {
     color: theme.palette.primary.contrastText,
