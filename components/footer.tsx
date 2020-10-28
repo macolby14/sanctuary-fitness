@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.contrastText,
     minHeight: '20vh',
     display: 'flex',
+    marginTop: theme.spacing(5),
   },
   container: {
     flexGrow: 1,
