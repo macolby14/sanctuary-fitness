@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import HeroBox from '../components/hero-box';
 import Link from '../components/link';
 import MoreInfo from '../components/more-info';
+import ImageCarousel from '../components/image-carousel';
 
 const useStyles = makeStyles((theme) => ({
   buttonMargin: {
@@ -28,6 +29,7 @@ export default function Home() {
           { /* TODO - Fix variant type conflict between MUI Link and MUI Button */ }
           <Button component={Link} className={classes.buttonMargin} href="/" color="primary" variant={'contained' as any}>Get Started</Button>
           <Typography variant="h6">Classes for all levels in Oahu, Hawaii</Typography>
+          <ImageCarousel />
           <MoreInfo />
         </Box>
 
