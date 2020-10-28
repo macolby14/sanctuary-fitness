@@ -4,6 +4,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import Image from 'next/image';
 
 import Link from './link';
 
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignContent: 'center',
   },
-  img: {
+  logoImage: {
     padding: '0 20px 0 0',
   },
   title: {
@@ -86,7 +87,7 @@ export default function MyAppBar() {
       <AppBar className={classes.root} position="sticky">
         <Container className={classes.container}>
           <Button component={Link} href="/" disableRipple>
-            <img className={classes.img} src="static/images/inner_sanct_logo_50px.png" alt="Inner Sanctuary" />
+            <Image className={classes.logoImage} src="static/images/inner_sanct_logo_50px.png" width={50} height={50} alt="Inner Sanctuary" />
           </Button>
           <Typography className={classes.title} variant="h6"><Link color="inherit" href="/">Inner Sanctuary Fitness</Link></Typography>
           <div className={classes.sectionDesktop}>
