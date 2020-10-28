@@ -10,6 +10,22 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // TODO: Sizing may be all based on first image size
 // TOOD: May be worth using premade library. Wanted to use Next optimized Images w/MUI
 
+const images = [
+  {
+    src: '/static/images/ExampleImage3_1000_517.jpg', alt: 'Filler Image 3', width: 1000, height: 517,
+  },
+  {
+    src: '/static/images/ExampleImage1_1740_900.jpg', alt: 'Filler Image 1', width: 1740, height: 900,
+  },
+  {
+    src: '/static/images/ExampleImage2_1450_750.jpg', alt: 'Filler Image 2', width: 1740, height: 900,
+  },
+];
+
+// TODO: Fix hack. Always putting widest image first since sizing based on it
+// Alternative: Give carousel a width/height. If too big image scales down. If small, have grey
+images.sort((a, b) => b.width - a.width);
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '100%',
@@ -38,18 +54,6 @@ const useStyles = makeStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
   },
 }));
-
-const images = [
-  {
-    src: '/static/images/ExampleImage1_1740_900.jpg', alt: 'Filler Image 1', width: 1740, height: 900,
-  },
-  {
-    src: '/static/images/ExampleImage2_1450_750.jpg', alt: 'Filler Image 2', width: 1740, height: 900,
-  },
-  {
-    src: '/static/images/ExampleImage3_1000_517.jpg', alt: 'Filler Image 3', width: 1000, height: 517,
-  },
-];
 
 type ImageCarouselProps = {
     classes?: string;
