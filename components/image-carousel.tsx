@@ -12,8 +12,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '80%',
+    maxWidth: '100%',
     position: 'relative',
+    backgroundColor: 'rgba(100,100,100,.25)',
   },
   chevron: {
     position: 'absolute',
@@ -31,9 +32,10 @@ const useStyles = makeStyles((theme) => ({
   },
   stack: {
     position: 'absolute',
-    top: '0',
-    left: '0',
     maxWidth: '100%',
+    top: '50%', /* position the top  edge of the element at the middle of the parent */
+    left: '50%', /* position the left edge of the element at the middle of the parent */
+    transform: 'translate(-50%, -50%)',
   },
   test: {
     backgroundColor: 'pink',

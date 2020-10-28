@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Box, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
 
 import HeroBox from '../components/hero-box';
 import Link from '../components/link';
@@ -8,14 +9,14 @@ import MoreInfo from '../components/more-info';
 import ImageCarousel from '../components/image-carousel';
 
 const useStyles = makeStyles((theme) => ({
-  buttonMargin: {
-    margin: theme.spacing(2, 'auto'),
-  },
-  margin: {
-    margin: theme.spacing(1, 2),
+  autoSideMargin: {
+    margin: theme.spacing('auto', 'auto'),
   },
   marginTop: {
     marginTop: theme.spacing() * 2,
+  },
+  marginTopDouble: {
+    marginTop: theme.spacing() * 4,
   },
 }));
 
@@ -30,9 +31,9 @@ export default function Home() {
         <HeroBox />
         <Box display="flex" flexDirection="column" alignItems="center" m={2}>
           { /* TODO - Fix variant type conflict between MUI Link and MUI Button */ }
-          <Button component={Link} className={classes.buttonMargin} href="/" color="primary" variant={'contained' as any}>Get Started</Button>
+          <Button component={Link} className={clsx(classes.autoSideMargin, classes.marginTop)} href="/" color="primary" variant={'contained' as any}>Get Started</Button>
           <Typography variant="h6">Classes for all levels in Oahu, Hawaii</Typography>
-          <ImageCarousel />
+          <ImageCarousel classes={classes.marginTopDouble} />
           <MoreInfo />
         </Box>
 
