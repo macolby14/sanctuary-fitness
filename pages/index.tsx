@@ -1,82 +1,53 @@
 import Head from 'next/head';
-// import styles from '../styles/Home.module.css';
+import { Box, Button, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+import HeroBox from '../components/hero-box';
+import Link from '../components/link';
+
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(2, 'auto'),
+  },
+}));
 
 export default function Home() {
+  const classes = useStyles();
   return (
     <div>
       <Head>
         <title>Inner Sanctuary Fitness - Home</title>
       </Head>
       <main>
-        <h1>Inner Sancutary Fitness</h1>
+        <HeroBox />
+        <Box display="flex" flexDirection="column" alignItems="center" m={2}>
+          { /* TODO - Fix variant type conflict between MUI Link and MUI Button */ }
+          <Button component={Link} className={classes.margin} href="/" color="primary" variant={'contained' as any}>Get Started</Button>
+          <Typography variant="h6">Classes for all levels in Oahu, Hawaii</Typography>
+          <MoreInfo />
+        </Box>
+
       </main>
     </div>
   );
 }
 
-// export default function Home() {
-//   return (
-//     <div className={styles.container}>
-//       <Head>
-//         <title>Create Next App</title>
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
+function MoreInfo() {
+  return (
+    <Box display="flex" flexDirection="column" alignItems="center" m={2}>
+      <InfoRow />
+      <InfoRow />
+      <InfoRow />
+    </Box>
+  );
+}
 
-//       <main className={styles.main}>
-//         <h1 className={styles.title}>
-//           Welcome to
-//           {' '}
-//           <a href="https://nextjs.org">Next.js!</a>
-//         </h1>
-
-//         <p className={styles.description}>
-//           Get started by editing
-//           {' '}
-//           <code className={styles.code}>pages/index.js</code>
-//         </p>
-
-//         <div className={styles.grid}>
-//           <a href="https://nextjs.org/docs" className={styles.card}>
-//             <h3>Documentation &rarr;</h3>
-//             <p>Find in-depth information about Next.js features and API.</p>
-//           </a>
-
-//           <a href="https://nextjs.org/learn" className={styles.card}>
-//             <h3>Learn &rarr;</h3>
-//             <p>Learn about Next.js in an interactive course with quizzes!</p>
-//           </a>
-
-//           <a
-//             href="https://github.com/vercel/next.js/tree/master/examples"
-//             className={styles.card}
-//           >
-//             <h3>Examples &rarr;</h3>
-//             <p>Discover and deploy boilerplate example Next.js projects.</p>
-//           </a>
-
-//           <a
-//             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//             className={styles.card}
-//           >
-//             <h3>Deploy &rarr;</h3>
-//             <p>
-//               Instantly deploy your Next.js site to a public URL with Vercel.
-//             </p>
-//           </a>
-//         </div>
-//       </main>
-
-//       <footer className={styles.footer}>
-//         <a
-//           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Powered by
-//           {' '}
-//           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-//         </a>
-//       </footer>
-//     </div>
-//   );
-// }
+function InfoRow() {
+  return (
+    <Box display="flex" m={2}>
+      <h6>Image</h6>
+      <h6>Body</h6>
+      <Typography variant="body2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dignissimos culpa ab qui maxime magnam. Perspiciatis distinctio optio nemo repellendus esse dolore dignissimos similique debitis, nisi error reiciendis excepturi aspernatur?</Typography>
+    </Box>
+  );
+}
