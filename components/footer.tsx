@@ -43,19 +43,19 @@ export default function Footer() {
     <footer className={classes.root}>
       <Container className={classes.container}>
         <div className={classes.footerBox}>
-          <Typography variant="subtitle1"><Link href="/contact" color="inherit">CONTACT US</Link></Typography>
+          <Typography variant="subtitle1"><Link href="/contact" color="inherit">Contact Me</Link></Typography>
           <Typography>kkcolby14@gmail.com</Typography>
           <Typography>(909) 835-5001</Typography>
         </div>
         <div className={classes.footerBox}>
-          <Typography><Link href="/classes" color="inherit">Classes</Link></Typography>
-          <Typography><Link href="/about" color="inherit">About Us</Link></Typography>
+          <Typography><Link href="/classes" color="inherit">Attend a Class</Link></Typography>
+          <Typography><Link href="/about" color="inherit">About Me</Link></Typography>
           <Typography>
             <Link href="https://pietrafitness.com/" color="inherit">Pietra Fitness</Link>
           </Typography>
         </div>
         <div className={classes.footerBox}>
-          <Typography variant="subtitle1">Follow Us</Typography>
+          <Typography variant="subtitle1">Follow Me</Typography>
           <IconButton className={classes.iconButton} component={Link} href="https://www.instagram.com/innersanctuaryfitness/"><InstagramIcon /></IconButton>
         </div>
       </Container>

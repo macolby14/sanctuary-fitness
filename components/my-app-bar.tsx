@@ -40,10 +40,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const pages = [
-  { text: 'Try It Now', link: '/classes' },
-  { text: 'Classes', link: '/classes' },
-  { text: 'About Us', link: '/about' },
-  { text: 'Contact Us', link: '/contact' },
+  { text: 'Home', link: '/' },
+  { text: 'Attend A Class', link: '/classes' },
+  { text: 'About Me', link: '/about' },
+  { text: 'Contact Me', link: '/contact' },
 ];
 
 export default function MyAppBar() {
