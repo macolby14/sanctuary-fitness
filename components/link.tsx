@@ -40,7 +40,7 @@ export type LinkProps = LinkPropsBase & NextComposedProps & Omit<MuiLinkProps, '
 
 // A styled version of the Next.js Link component:
 // https://nextjs.org/docs/#with-link
-function Link(props: LinkProps) {
+function CustomLink(props: LinkProps) {
   const {
     href,
     activeClassName = 'active',
@@ -67,11 +67,12 @@ function Link(props: LinkProps) {
       className={className}
       ref={innerRef}
       href={href as string}
+      color="inherit"
       {...other}
     />
   );
 }
 
 export default React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => (
-  <Link {...props} innerRef={ref} />
+  <CustomLink {...props} innerRef={ref} />
 ));
