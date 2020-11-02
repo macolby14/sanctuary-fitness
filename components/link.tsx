@@ -67,7 +67,7 @@ function CustomLink(props: LinkProps) {
       className={className}
       ref={innerRef}
       href={href as string}
-      color="inherit"
+      color="initial"
       {...other}
     />
   );
