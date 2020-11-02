@@ -1,76 +1,70 @@
 import { useState } from 'react';
-import { Typography, Box, Button } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import DateFnsUtils from '@date-io/date-fns';
-import { add } from 'date-fns';
 import {
-  DateTimePicker,
+  addHours, addDays, startOfDay, startOfWeek, format,
+} from 'date-fns';
+import {
+  DatePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
 
 // TODO - Fix typing of date with state and MuiPicker
+// TODO - If on mobile, only show selected day, not full week
 
 const useStyles = makeStyles((theme) => ({
-  marginRight: {
-    marginRight: theme.spacing() * 2,
+  autoMargin: { margin: 'auto' },
+  marginRight: { margin: theme.spacing() * 2 },
+  availBox: {
+    border: '1px solid black',
+    width: '6rem',
+    height: '2rem',
+    margin: theme.spacing(1, 1),
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  marginLeft: {
-    marginLeft: theme.spacing() * 2,
-  },
-  autoLeftRightMargin: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
+
 }));
 
-type DateLabelProps = {
-  date: Date,
-  setDate: (date: any)=>void, // eslint-disable-line no-unused-vars
-  children: React.ReactNode,
-  disablePast: boolean
-}
-
-function DateLabel({
-  date, setDate, children, disablePast,
-}: DateLabelProps) {
-  const classes = useStyles();
-
-  return (
-    <Box display="flex" justifyContent="center" alignItems="flex-end" m={2}>
-      <Typography variant="h5" className={classes.marginRight}>{children}</Typography>
-      {/* Type error. Any to match example https://material-ui-pickers.dev/getting-started/usage */}
-      <DateTimePicker value={date} onChange={setDate} disablePast={disablePast} />
-      <Typography variant="subtitle1" className={classes.marginLeft}>(Times are in HST)</Typography>
-    </Box>
-  );
-}
+const dayOffsets = [0, 1, 2, 3, 4, 5, 6];
+const timeOffsets = [6, 8, 10, 12, 14, 16, 18, 20];
 
 export default function CreateAvail() {
   const classes = useStyles();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [date, setDate] = useState(startOfDay(new Date()));
 
-  const handleStartDateChange = (date: any) => {
-    setStartDate(date);
-    setEndDate(add(date, { hours: 1, minutes: 15 }));
+  const handleDateChange = (newDate: Date) => {
+    setDate(startOfDay(newDate));
   };
 
-  const handleAvailCreation = () => {
-    // TODO: Send data to the server and provide feedback
-  };
+  const weekStart = startOfWeek(date);
+  const dateSpots = dayOffsets.map((dayOffset) => {
+    const thisDay = addDays(weekStart, dayOffset);
+    return timeOffsets.map((timeOffset) => addHours(thisDay, timeOffset));
+  });
+  const dateGrid = dateSpots.map((dayArr) => (
+    <div key={dayArr[0].valueOf()}>
+      <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
+        <Typography variant="subtitle1" align="center">{format(dayArr[0], 'EEEEEE MM/d')}</Typography>
+        {dayArr.map((dateSpot) => <div key={dateSpot.valueOf()} className={classes.availBox}>{format(dateSpot, 'p')}</div>)}
+      </Box>
+    </div>
+  ));
 
   return (
-    <Box display="flex" flexDirection="column">
+    <>
       <Typography variant="h3" align="center">Create New Availability</Typography>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <DateLabel date={startDate} setDate={handleStartDateChange} disablePast>
-          Start Date
-        </DateLabel>
-        <DateLabel date={endDate} setDate={setEndDate} disablePast>
-          End Date
-        </DateLabel>
+        <Box display="flex" flexDirection="row" alignItems="center" justifyContent="center" marginBottom={2} marginTop={2}>
+          <Typography className={classes.marginRight} variant="h6" align="center">Select a date:</Typography>
+          <DatePicker value={date} onChange={handleDateChange as any} />
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" justifyContent="center" flexWrap="wrap">
+          {dateGrid}
+        </Box>
       </MuiPickersUtilsProvider>
-      <Button variant="contained" color="primary" className={classes.autoLeftRightMargin} onClick={handleAvailCreation}>Create Availability</Button>
-    </Box>
+    </>
   );
 }
