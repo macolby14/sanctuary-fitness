@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
 
 const pages = [
   { text: 'Home', link: '/' },
-  { text: 'Attend A Class', link: '/classes' },
   { text: 'About Me', link: '/about' },
   { text: 'Contact Me', link: '/contact' },
 ];

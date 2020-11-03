@@ -31,7 +31,18 @@ export default function Home() {
         <HeroBox />
         <Box display="flex" flexDirection="column" alignItems="center" m={2}>
           { /* TODO - Fix variant type conflict between MUI Link and MUI Button */ }
-          <Button component={Link} className={clsx(classes.autoSideMargin, classes.marginTop)} href="/classes" color="primary" variant={'contained' as any}>Get Started</Button>
+          <Button
+            component={Link}
+            className={clsx(classes.autoSideMargin, classes.marginTop)}
+            href="mailto:innersanctuaryfitness@gmail.com?subject=I'd like to attend a class with Inner Sanctuary Fitness"
+            rel="noopener noreferrer"
+            target="_blank"
+            color="primary"
+            variant={'contained' as any}
+          >
+            Get Started
+
+          </Button>
           <Typography variant="h6">Classes for all levels in Oahu, Hawaii</Typography>
           <ImageCarousel classes={classes.marginTopDouble} />
           <MoreInfo />

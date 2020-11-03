@@ -58,7 +58,16 @@ export default function Footer() {
           <Typography>(909) 835-5001</Typography>
         </div>
         <div className={classes.footerBox}>
-          <Typography><Link href="/classes" color="inherit">Attend a Class</Link></Typography>
+          <Typography>
+            <Link
+              href="mailto:innersanctuaryfitness@gmail.com?subject=I'd like to attend a class with Inner Sanctuary Fitness"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="inherit"
+            >
+              Attend a Class
+            </Link>
+          </Typography>
           <Typography><Link href="/about" color="inherit">About Me</Link></Typography>
           <Typography>
             <Link href="https://pietrafitness.com/" color="inherit">Pietra Fitness</Link>
