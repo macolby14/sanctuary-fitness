@@ -1,10 +1,10 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export default class Class {
+export default class Course {
     @PrimaryGeneratedColumn()
     id!: number
 
     @Column()
-    date!: number
+    date!: string
 }
