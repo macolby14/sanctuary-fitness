@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Typography, Box, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import DateFnsUtils from '@date-io/date-fns';
@@ -9,7 +9,6 @@ import {
   DatePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
-import clsx from 'clsx';
 
 // TODO - Fix typing of date with state and MuiPicker
 // TODO - If on mobile, only show selected day, not full week
@@ -50,6 +49,16 @@ export default function CreateAvail() {
   const classes = useStyles();
   const [date, setDate] = useState(startOfDay(new Date()));
   const [selectedMap, setSelectedMap] = useState<SelectedDateRecord>({});
+
+  useEffect(() => {
+    async function loadServer() {
+      const resp = await fetch('http://localhost:8000');
+      const body = await resp.json();
+      console.log(body);
+    }
+
+    loadServer();
+  });
 
   const handleDateChange = (newDate: Date) => {
     setDate(startOfDay(newDate));
