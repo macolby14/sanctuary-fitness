@@ -12,13 +12,13 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 const images = [
   {
-    src: '/static/images/ExampleImage3_1000_517.jpg', alt: 'Filler Image 3', width: 1000, height: 517,
+    src: '/static/images/gallery1_6240_4160_gimp_tiny.jpg', alt: 'Filler Image 3', width: 6240, height: 4160,
   },
   {
-    src: '/static/images/ExampleImage1_1740_900.jpg', alt: 'Filler Image 1', width: 1740, height: 900,
+    src: '/static/images/gallery2_5862_3424_gimp_tiny.jpg', alt: 'Filler Image 1', width: 5862, height: 3424,
   },
   {
-    src: '/static/images/ExampleImage2_1450_750.jpg', alt: 'Filler Image 2', width: 1740, height: 900,
+    src: '/static/images/gallery3_5768_4160_gimp_tiny.jpg', alt: 'Filler Image 2', width: 5768, height: 4160,
   },
 ];
 
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '100%',
     position: 'relative',
-    backgroundColor: 'rgba(100,100,100,.25)',
+    // backgroundColor: theme.palette.common.white,
   },
   chevron: {
     position: 'absolute',
