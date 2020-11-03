@@ -9,9 +9,11 @@ import {
   DatePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
+import clsx from 'clsx';
 
 // TODO - Fix typing of date with state and MuiPicker
 // TODO - If on mobile, only show selected day, not full week
+// TODO - Improve accessibility to meet jsx-a11y/click-events-have-key-events
 
 const useStyles = makeStyles((theme) => ({
   autoMargin: { margin: 'auto' },
@@ -24,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    cursor: 'pointer',
+  },
+  boxSelected: {
+    borderColor: 'green',
+    backgroundColor: 'green',
   },
 
 }));
@@ -31,12 +38,23 @@ const useStyles = makeStyles((theme) => ({
 const dayOffsets = [0, 1, 2, 3, 4, 5, 6];
 const timeOffsets = [6, 8, 10, 12, 14, 16, 18, 20];
 
+type SelectedDateRecord = Record<number, boolean>;
+
 export default function CreateAvail() {
   const classes = useStyles();
   const [date, setDate] = useState(startOfDay(new Date()));
+  const [selectedMap, setSelectedMap] = useState<SelectedDateRecord>({});
 
   const handleDateChange = (newDate: Date) => {
     setDate(startOfDay(newDate));
+  };
+
+  const handleDateClick = (clickedDate: Date) => {
+    const newSelectedMap = { ...selectedMap };
+    if (newSelectedMap[clickedDate.valueOf()] === undefined) {
+      newSelectedMap[clickedDate.valueOf()] = true;
+    } else { delete newSelectedMap[clickedDate.valueOf()]; }
+    setSelectedMap(newSelectedMap);
   };
 
   const weekStart = startOfWeek(date);
@@ -48,7 +66,18 @@ export default function CreateAvail() {
     <div key={dayArr[0].valueOf()}>
       <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
         <Typography variant="subtitle1" align="center">{format(dayArr[0], 'EEEEEE MM/d')}</Typography>
-        {dayArr.map((dateSpot) => <div key={dateSpot.valueOf()} className={classes.availBox}>{format(dateSpot, 'p')}</div>)}
+        {dayArr.map((dateSpot, i) => (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+          <div
+            key={dateSpot.valueOf()}
+            className={clsx(classes.availBox, selectedMap[dateSpot.valueOf()] !== undefined ? classes.boxSelected : '')}
+            onClick={() => { handleDateClick(dateSpot); }}
+            role="button"
+            tabIndex={i}
+          >
+            {format(dateSpot, 'p')}
+          </div>
+        ))}
       </Box>
     </div>
   ));
