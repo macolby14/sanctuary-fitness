@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Typography, Box } from '@material-ui/core';
+import { Typography, Box, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -27,10 +27,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
+    backgroundColor: '#DDD',
   },
   boxSelected: {
     borderColor: 'green',
     backgroundColor: 'green',
+  },
+  customRootSelected: {
+    color: theme.palette.common.white,
+    backgroundColor: theme.palette.success.main,
+    '&:hover': { backgroundColor: theme.palette.success.dark },
   },
 
 }));
@@ -66,17 +72,16 @@ export default function CreateAvail() {
     <div key={dayArr[0].valueOf()}>
       <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
         <Typography variant="subtitle1" align="center">{format(dayArr[0], 'EEEEEE MM/d')}</Typography>
-        {dayArr.map((dateSpot, i) => (
+        {dayArr.map((dateSpot) => (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          <div
+          <Button
             key={dateSpot.valueOf()}
-            className={clsx(classes.availBox, selectedMap[dateSpot.valueOf()] !== undefined ? classes.boxSelected : '')}
+            className={classes.availBox}
+            classes={{ root: selectedMap[dateSpot.valueOf()] === true ? classes.customRootSelected : '' }}
             onClick={() => { handleDateClick(dateSpot); }}
-            role="button"
-            tabIndex={i}
           >
             {format(dateSpot, 'p')}
-          </div>
+          </Button>
         ))}
       </Box>
     </div>
