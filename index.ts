@@ -1,4 +1,5 @@
-import express, { Request, Response, NextFunction } from 'express';
+/* eslint-disable no-console */
+import express, { Request, Response } from 'express';
 import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import path from 'path';
@@ -16,15 +17,11 @@ createConnection().then((connection) => {
   // Serve static files from public -> served under static url
   app.use('/static', express.static(path.join(__dirname, 'public')));
 
-  app.get('/courses/:date', async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const results = await courseRepository.find({ where: { date: req.params.date } });
-      if (results.length > 1) { next(new Error('Multiple classes with same date')); }
-      if (results.length === 0) { throw new Error('No classes with that date'); }
-      return res.send(results);
-    } catch (err) {
-      next(err);
-    }
+  app.get('/courses/:date', async (req: Request, res: Response) => {
+    const results = await courseRepository.find({ where: { date: req.params.date } });
+    if (results.length > 1) { res.status(500); throw new Error('Multiple classes with same date'); }
+    if (results.length === 0) { res.status(500); throw new Error('No classes with that date'); }
+    return res.send(results);
   });
 
   app.get('/courses', async (req: Request, res: Response) => {
@@ -40,8 +37,8 @@ createConnection().then((connection) => {
 
   app.put('/courses/:date', async (req: Request, res: Response) => {
     const courses = await courseRepository.find({ where: { date: req.params.date } });
-    if (courses.length > 1) { return res.json({ error: 'More than 1 course found with same date' }); }
-    if (courses.length === 0) { return res.json({ error: 'No courses found with this date for put request' }); }
+    if (courses.length > 1) { res.status(500); throw new Error('Multiple classes found with same date'); }
+    if (courses.length === 0) { res.status(500); throw new Error('No classes with that date'); }
     const course = courses[0];
     courseRepository.merge(course, req.body);
     const results = await courseRepository.save(course);
@@ -52,6 +49,8 @@ createConnection().then((connection) => {
     const results = await courseRepository.delete({ date: req.params.date });
     return res.send(results);
   });
+
+  app.get('/', (req, res) => res.send('Test'));
 
   app.listen(PORT, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
