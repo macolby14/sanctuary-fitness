@@ -8,7 +8,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./backend:/backend_src
+      - ./backend:/src
       - /src/node_modules
     environment:
       DB_PASSWORD: 'postgres'
@@ -17,7 +17,9 @@ services:
       DB_PORT: 5432
       DB_HOST: 'db'
       NODE_ENV: 'production'
-    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run build && npm run start'
+      SERVER: http://localhost:8080
+      SERVER_PORT: 8080
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run build-start'
 
   db:
     image: postgres:13.1
@@ -41,7 +43,7 @@ services:
       - ./frontend:/src
       - /src/node_modules
     stdin_open: true
-    command: 'npm run build && npm run start'
+    command: 'npm run build-start'
 
 volumes:
   postgres-data:
