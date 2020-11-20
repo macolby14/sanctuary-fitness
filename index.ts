@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import path from 'path';
@@ -16,15 +16,20 @@ createConnection().then((connection) => {
   // Serve static files from public -> served under static url
   app.use('/static', express.static(path.join(__dirname, 'public')));
 
+  app.get('/courses/:date', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const results = await courseRepository.find({ where: { date: req.params.date } });
+      if (results.length > 1) { next(new Error('Multiple classes with same date')); }
+      if (results.length === 0) { throw new Error('No classes with that date'); }
+      return res.send(results);
+    } catch (err) {
+      next(err);
+    }
+  });
+
   app.get('/courses', async (req: Request, res: Response) => {
     const coursees = await courseRepository.find();
     res.json(coursees);
-  });
-
-  app.get('/courses/:date', async (req: Request, res: Response) => {
-    const results = await courseRepository.find({ where: { date: req.params.date } });
-    if (results.length > 1) { return res.json({ error: 'More than 1 course found with same date' }); }
-    return res.send(results);
   });
 
   app.post('/courses', async (req: Request, res: Response) => {
