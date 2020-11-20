@@ -12,8 +12,6 @@ createConnection().then((connection) => {
   const app = express();
   app.use(cors());
 
-  const PORT = 8000;
-
   // Serve static files from public -> served under static url
   app.use('/static', express.static(path.join(__dirname, 'public')));
 
@@ -52,7 +50,7 @@ createConnection().then((connection) => {
 
   app.get('/', (req, res) => res.send('Test'));
 
-  app.listen(PORT, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+  app.listen(process.env.SERVER_PORT, () => {
+    console.log(`⚡️[server]: Server is running at ${process.env.SERVER_PORT}`);
   });
 });
