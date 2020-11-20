@@ -1,22 +1,23 @@
 version: '3.8'
 services:
-  api:
-    image: api
+  backend:
+    image: sanctuary-fitness-backend
     build: ./backend
     ports:
       - '8080:8080'
     depends_on:
       - db
     volumes:
-      - ./backend:/app
+      - ./backend:/backend_src
+      - /src/node_modules
     environment:
       DB_PASSWORD: 'postgres'
       DB_USER: 'postgres'
       DB_NAME: 'postgres'
       DB_PORT: 5432
       DB_HOST: 'db'
-      NODE_ENV: 'development'
-    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run dev'
+      NODE_ENV: 'production'
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run build && npm run start'
 
   db:
     image: postgres:13.1
@@ -30,17 +31,17 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
   frontend:
-    image: app
+    image: sanctuary-fitness-frontend
     build: ./frontend
     ports:
       - '3000:3000'
     depends_on:
-      - api
+      - backend
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - ./frontend:/src
+      - /src/node_modules
     stdin_open: true
-    command: 'npm run dev'
+    command: 'npm run build && npm run start'
 
 volumes:
   postgres-data:
