@@ -1,21 +1,22 @@
 version: '3.8'
 services:
-  # api:
-  #   image: api
-  #   build: ./backend
-  #   ports:
-  #     - '8080:8080'
-  #   depends_on:
-  #     - db
-  #   volumes:
-  #     - ./backend:/app
-  #   environment:
-  #     DB_PASSWORD: 'postgres'
-  #     DB_USER: 'postgres'
-  #     DB_NAME: 'postgres'
-  #     DB_PORT: 'postgres'
-  #     DB_HOST: 'db'
-  #   command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run build && npm run start'
+  api:
+    image: api
+    build: ./backend
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+    environment:
+      DB_PASSWORD: 'postgres'
+      DB_USER: 'postgres'
+      DB_NAME: 'postgres'
+      DB_PORT: 5432
+      DB_HOST: 'db'
+      NODE_ENV: 'development'
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm run dev'
 
   db:
     image: postgres:13.1
@@ -33,8 +34,8 @@ services:
     build: ./frontend
     ports:
       - '3000:3000'
-    # depends_on:
-    #   - api
+    depends_on:
+      - api
     volumes:
       - ./frontend:/app
       - /app/node_modules
