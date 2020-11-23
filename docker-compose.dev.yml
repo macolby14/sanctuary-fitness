@@ -32,9 +32,18 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
-  #frontend is hosted on Vercel - not on Docker on Digital Ocean
-  #Was done because custom Next server was running out of memory on Digital Ocean
-  #Could replace Next Images with normal images and serve statically to move to DO
+  frontend:
+    image: sanctuary-fitness-frontend
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/src
+      - /src/node_modules
+    stdin_open: true
+    command: 'npm run dev'
 
 volumes:
   postgres-data:
