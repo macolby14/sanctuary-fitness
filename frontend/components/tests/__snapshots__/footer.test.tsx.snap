@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<footer
+  className="makeStyles-root-1"
+>
+  <div
+    className="MuiContainer-root makeStyles-container-2 MuiContainer-maxWidthLg"
+  >
+    <div
+      className="makeStyles-footerBox-3"
+    >
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle1"
+      >
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+          href="/contact"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+        >
+          Contact Me
+        </a>
+      </h6>
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+          href="mailto:innersanctuaryfitness@gmail.com?subject=Question%20for%20Inner%20Sanctuary%20Fitness"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          rel="noopener noreferrer"
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+          target="_blank"
+        >
+          innersanctuaryfitness@gmail.com
+        </a>
+      </p>
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        (909) 835-5001
+      </p>
+    </div>
+    <div
+      className="makeStyles-footerBox-3"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+          href="mailto:innersanctuaryfitness@gmail.com?subject=I'd%20like%20to%20attend%20a%20class%20with%20Inner%20Sanctuary%20Fitness"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          rel="noopener noreferrer"
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+          target="_blank"
+        >
+          Attend a Class
+        </a>
+      </p>
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+          href="/about"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+        >
+          About Me
+        </a>
+      </p>
+      <p
+        className="MuiTypography-root MuiTypography-body1"
+      >
+        <a
+          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+          href="https://pietrafitness.com/"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+        >
+          Pietra Fitness
+        </a>
+      </p>
+    </div>
+    <div
+      className="makeStyles-footerBox-3"
+    >
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle1"
+      >
+        Follow Me
+      </h6>
+      <a
+        aria-disabled={false}
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiButtonBase-root MuiIconButton-root makeStyles-iconButton-4"
+        href="https://www.instagram.com/innersanctuaryfitness"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        style={
+          Object {
+            "textDecoration": "none",
+          }
+        }
+        tabIndex={0}
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
+            />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</footer>
+`;
