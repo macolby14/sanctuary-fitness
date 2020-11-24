@@ -9,6 +9,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import MyAppBar from '../components/my-app-bar';
 import Footer from '../components/footer';
 import theme from '../styles/theme.js';
+import React from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

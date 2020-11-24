@@ -9,6 +9,7 @@ import {
   DatePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
+import React from 'react';
 
 // TODO - Fix typing of date with state and MuiPicker
 // TODO - If on mobile, only show selected day, not full week

@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Image from 'next/image';
 
 import Link from './link';
+import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {

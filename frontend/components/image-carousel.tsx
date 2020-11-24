@@ -5,6 +5,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import React from 'react';
 
 // TODO: Investigate lazy loading images. Images are hidden, may be all loading right away
 // TODO: Sizing may be all based on first image size
