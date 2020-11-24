@@ -1,0 +1,15 @@
+name: CI
+# Run this workflow every time a new commit pushed to your repository
+on: push
+
+jobs:
+  # Set the job key. The key is displayed as the job name
+  # when a job name is not provided
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run ESLint
+      run: eslint . --ext .js,.jsx,.ts,.tsx
