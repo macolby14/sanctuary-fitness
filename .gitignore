@@ -35,4 +35,5 @@ yarn-error.log*
 .vercel
 
 # local #!bin/bash files
+scripts/
 *.script
