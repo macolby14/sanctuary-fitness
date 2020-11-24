@@ -7,6 +7,7 @@ import HeroBox from '../components/hero-box';
 import Link from '../components/link';
 import MoreInfo from '../components/more-info';
 import ImageCarousel from '../components/image-carousel';
+import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
   autoSideMargin: {

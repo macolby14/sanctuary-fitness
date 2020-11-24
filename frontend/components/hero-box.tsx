@@ -1,5 +1,6 @@
 import { Box, Typography } from '@material-ui/core';
 import Image from 'next/image';
+import React from 'react';
 
 export default function HeroBox() {
   return (

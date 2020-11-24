@@ -1,7 +1,7 @@
 // from https://github.com/mui-org/material-ui/blob/4b6cbf0/examples/nextjs-with-typescript/src/Link.tsx#L1
 /* eslint-disable */
 
-import * as React from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
