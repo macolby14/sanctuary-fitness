@@ -1,0 +1,17 @@
+#This is used on digital ocean server to deploy on push to remote
+#Used in a bare repository
+
+#!/bin/bash
+while read oldrev newrev ref
+do
+    if [[ $ref =~ .*/main$ ]];
+    then
+        echo "Main ref received.  Deploying main branch to production..."
+        git --work-tree=/home/mark/sanctuary-fitness --git-dir=/home/mark/sanctuary-fitness.git checkout -f
+        cd /home/mark/sanctuary-fitness
+        docker-compose up --build -d
+        echo "Finished running docker-compose up --build -d"
+        else
+        echo "Ref $ref successfully received.  Doing nothing: only the master branch may be deployed on this server."
+    fi
+done
