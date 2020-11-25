@@ -59,7 +59,7 @@ export default function Footer() {
         <div className={classes.footerBox}>
           <Typography>
             <Link
-              href="mailto:innersanctuaryfitness@gmail.com?subject=I'd like to attend a class with Inner Sanctuary Fitness"
+              href="mailto:innersanctuaryfitness@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               color="inherit"

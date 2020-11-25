@@ -36,7 +36,7 @@ export default function Home() {
           <Button
             component={Link}
             className={clsx(classes.autoSideMargin, classes.marginTop)}
-            href="mailto:innersanctuaryfitness@gmail.com?subject=I'd like to attend a class with Inner Sanctuary Fitness"
+            href="mailto:innersanctuaryfitness@gmail.com"
             rel="noopener noreferrer"
             target="_blank"
             color="primary"
