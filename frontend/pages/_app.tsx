@@ -26,9 +26,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <meta charSet="utf-8" />
-        <meta name="description" content="Inner Sanctuary Fitness is a stretching and 
+        <meta name="description" key="description" content="Inner Sanctuary Fitness is a stretching and 
         strengthening class that features Christian prayer and meditation in the Catholic Tradition. It is part of the Pietra Fitness program." />
-        <meta name="keywords" content="Pietra Fitness, Chritian, Catholic, Yoga, Spiritual, Fitness, Strengthening" />
+        <meta name="keywords" content="Pietra Fitness, Chritian, Catholic, Yoga, Spiritual, Fitness, Stretching, Strengthening" />
         <meta name="author" content="Mark Colby, Kimberly Colby" />
         <meta property="og:local" content="en_US"/>
         <meta property="og:title" content="Inner Sanctuary Fitness"/>
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:image:alt" content="A picture of Kimberly Colby stretching on the beach doing Pietra Fitness"/>
         <meta property="og:description"  content="Inner Sanctuary Fitness is a stretching and 
         strengthening class that features Christian prayer and meditation in the Catholic Tradition. It is part of the Pietra Fitness program." /> 
-        <meta property="twitter:card" content="sumamry" />
+        <meta property="twitter:card" content="summary" />
         <meta property="twitter:creator" content="@macolby14" />
       </Head>
       <ThemeProvider theme={theme}>

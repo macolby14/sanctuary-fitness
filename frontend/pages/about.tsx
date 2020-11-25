@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {Typography} from '@material-ui/core';
 import Image from 'next/image';
 import {makeStyles} from '@material-ui/core/styles'
@@ -28,6 +29,12 @@ const useStyles = makeStyles((theme)=>({
 export default function About() {
   const classes=useStyles();
   return <>
+  <Head>
+    <title>About Me - Inner Sanctuary Fitness</title>
+    <meta name="description" key="description" content="The About Me page for Kimberly Colby, who leads Inner Sanctuary Fitness. 
+    Inner Sanctuary Fitness is a stretching and strengthening class that features Christian prayer and meditation in the Catholic 
+    Tradition. It is part of the Pietra Fitness program." />
+  </Head>
   <Typography variant="h1" align="center">About Me</Typography>
   <div  className={classes.container}>
     <div className={classes.splitContainer}>

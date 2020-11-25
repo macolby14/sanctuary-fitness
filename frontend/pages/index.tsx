@@ -25,7 +25,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Inner Sanctuary Fitness - Home</title>
+        <title>Inner Sanctuary Fitness - Stretching and Strengthing in Oahu, Hawaii</title>
+        <meta name="description" key="description" content="Inner Sanctuary Fitness is a stretching and 
+        strengthening class that features Christian prayer and meditation in the Catholic Tradition. It is part of the Pietra Fitness program." />
       </Head>
       <main>
         <HeroBox />
