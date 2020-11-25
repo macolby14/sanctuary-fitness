@@ -55,7 +55,6 @@ export default function Footer() {
             </Link>
 
           </Typography>
-          <Typography>(909) 835-5001</Typography>
         </div>
         <div className={classes.footerBox}>
           <Typography>
