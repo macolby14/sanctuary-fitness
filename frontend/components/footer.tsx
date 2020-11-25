@@ -46,7 +46,7 @@ export default function Footer() {
           <Typography variant="subtitle1"><Link href="/contact" color="inherit">Contact Me</Link></Typography>
           <Typography>
             <Link
-              href="mailto:innersanctuaryfitness@gmail.com?subject=Question for Inner Sanctuary Fitness"
+              href="mailto:innersanctuaryfitness@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               color="inherit"
