@@ -36,14 +36,20 @@ export default function Home() {
           <Button
             component={Link}
             className={clsx(classes.autoSideMargin, classes.marginTop)}
-            href="mailto:innersanctuaryfitness@gmail.com"
+            href={"mailto:innersanctuaryfitness@gmail.com?Subject=I am interested in taking a Pietra Fitness class with you"+
+            "&body="+
+            "Hi Kimberly! I am interested in taking a class with you%0D%0A%0D%0A"+
+            "My Name:%0D%0A"+
+            "Times I am Available:%0D%0A"+
+            "Part of Oahu I live on: %0D%0A"+
+            "Do I prefer an in-person or a online lesson:%0D%0A"+
+            "Anything else you should know:%0D%0A"}
             rel="noopener noreferrer"
             target="_blank"
             color="primary"
             variant={'contained' as any}
           >
             Get Started
-
           </Button>
           <Typography variant="h6">Classes for all levels in Oahu, Hawaii</Typography>
           <ImageCarousel classes={classes.marginTopDouble} />
