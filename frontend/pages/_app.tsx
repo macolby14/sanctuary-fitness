@@ -43,14 +43,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         strengthening class that features Christian prayer and meditation in the Catholic Tradition. It is part of the Pietra Fitness program." /> 
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:creator" content="@macolby14" />
-        <script type="application/ld+json">
-            {{
+        <script type='application/ld+json' 
+        dangerouslySetInnerHTML={ 
+          { __html: `{
               "@context": "https://schema.org",
               "@type": "Organization",
               "url": "https://www.innersanctuaryfitness.com",
               "logo": "https://innersanctuaryfitness.com/static/images/inner_sanct_logo_100px.png"
-            }}
-        </script>
+            }`
+          }} />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
