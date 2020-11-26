@@ -44,7 +44,7 @@ export default function Home() {
             "Part of Oahu I live on: %0D%0A"+
             "Do I prefer an in-person or a online lesson:%0D%0A"+
             "Anything else you should know:%0D%0A"}
-            rel="noopener noreferrer"
+            rel="noopener"
             target="_blank"
             color="primary"
             variant={'contained' as any}

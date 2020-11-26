@@ -48,7 +48,7 @@ export default function Footer() {
             <Link
               href="mailto:innersanctuaryfitness@gmail.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               color="inherit"
             >
               innersanctuaryfitness@gmail.com
@@ -61,7 +61,7 @@ export default function Footer() {
             <Link
               href="mailto:innersanctuaryfitness@gmail.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               color="inherit"
             >
               Attend a Class
@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
         <div className={classes.footerBox}>
           <Typography variant="subtitle1">Follow Me</Typography>
-          <IconButton className={classes.iconButton} component={Link} href="https://www.instagram.com/innersanctuaryfitness/" target="_blank" rel="noopener noreferrer"><InstagramIcon /></IconButton>
+          <IconButton className={classes.iconButton} component={Link} href="https://www.instagram.com/innersanctuaryfitness/" target="_blank" rel="noopener"><InstagramIcon /></IconButton>
         </div>
       </Container>
     </footer>

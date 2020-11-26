@@ -14,7 +14,7 @@ export default function Contact() {
    <Typography variant="h4" align="center">Questions about scheduling a class?</Typography>
    <Typography variant="h4" align="center">Want to learn more?</Typography>
    <br/>
-   <Typography variant="h4" align="center">Email me at <Link href="mailto:innersanctuaryfitness@gmail.com" target="_blank" rel="noopener noreferrer">innersanctuaryfitness@gmail.com</Link></Typography>
+   <Typography variant="h4" align="center">Email me at <Link href="mailto:innersanctuaryfitness@gmail.com" target="_blank" rel="noopener">innersanctuaryfitness@gmail.com</Link></Typography>
    <br/>
    <Typography variant="h3" align="center">Thank you!</Typography>
   </>;
