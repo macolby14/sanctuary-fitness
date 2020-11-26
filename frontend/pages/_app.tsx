@@ -35,14 +35,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="Website"/>
         <meta property="og:url" content="https://www.innersanctuaryfitness.com"/>
         <meta property="og:site_name" content="Inner Sanctuary Fitness"/>
-        <meta property="og:image:secure_url" content="https://innersanctuaryfitness.com/static/images/gallery1_6240_4160_gimp_tiny.jpg"/>
+        <meta property="og:image:secure_url" content="https://innersanctuaryfitness.com/static/images/inner_sanct_logo_100px.png"/>
         <meta property="og:image:width" content="6240"/>
         <meta property="og:image:height" content="4160"/>
-        <meta property="og:image:alt" content="A picture of Kimberly Colby stretching on the beach doing Pietra Fitness"/>
+        <meta property="og:image:alt" content="Logo of Inner Sanctuary Fintess. A woman kneeling and praying with stained glass and a dove."/>
         <meta property="og:description"  content="Inner Sanctuary Fitness is a stretching and 
         strengthening class that features Christian prayer and meditation in the Catholic Tradition. It is part of the Pietra Fitness program." /> 
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:creator" content="@macolby14" />
+        <script type="application/ld+json">
+            {{
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "url": "https://www.innersanctuaryfitness.com",
+              "logo": "https://innersanctuaryfitness.com/static/images/inner_sanct_logo_100px.png"
+            }}
+        </script>
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
