@@ -12,7 +12,14 @@ const theme = createMuiTheme({
     secondary: {
       main: '#489ED4',
     },
-
+  },
+  typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      'Cardo',
+      'serif',
+      'sans-serif',
+    ].join(','),
   },
 });
 const responsiveTheme = responsiveFontSizes(theme);
