@@ -14,7 +14,7 @@ export default function HeroBox() {
           Calm and Engage Your Mind
         </Typography>
         <Typography variant="h6">
-          Care and nourish Your Soul
+          Care and Nourish Your Soul
         </Typography>
       </Box>
     </Box>
