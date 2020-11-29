@@ -38,16 +38,16 @@ function InfoRow({
 export default function MoreInfo() {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" m={2}>
-      <InfoRow src="/static/images/body_icon.svg" alt="Body Icon" subject="Body">
+      <InfoRow src="/images/body_icon.svg" alt="Body Icon" subject="Body">
         Physical exercises are designed to increase your flexibility and range of motion,
         and develop your muscle and core strength. There are different levels appropriate for
         everyone, from beginners to experts.
       </InfoRow>
-      <InfoRow src="/static/images/mind_icon.svg" alt="Mind Icon" subject="Mind">
+      <InfoRow src="/images/mind_icon.svg" alt="Mind Icon" subject="Mind">
         Workouts are designed to calm your mind while simulatenously helping
         you focus on God&apos;s infinite love.
       </InfoRow>
-      <InfoRow src="/static/images/soul_icon.svg" alt="Soul Icon" subject="Soul">
+      <InfoRow src="/images/soul_icon.svg" alt="Soul Icon" subject="Soul">
         Bodily prayer is coupled with Christian prayer and mediation to nourish your
         soul, focusing on themes of joy, peace, surrender, and
         embracing the present moment.

@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="Website" />
         <meta property="og:url" content="https://www.innersanctuaryfitness.com" />
         <meta property="og:site_name" content="Inner Sanctuary Fitness" />
-        <meta property="og:image:secure_url" content="https://innersanctuaryfitness.com/static/images/inner_sanct_logo_100px.png" />
+        <meta property="og:image:secure_url" content="https://innersanctuaryfitness.com/images/inner_sanct_logo_100px.png" />
         <meta property="og:image:width" content="6240" />
         <meta property="og:image:height" content="4160" />
         <meta property="og:image:alt" content="Logo of Inner Sanctuary Fintess. A woman kneeling and praying with stained glass and a dove." />
@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               "@context": "https://schema.org",
               "@type": "Organization",
               "url": "https://www.innersanctuaryfitness.com",
-              "logo": "https://innersanctuaryfitness.com/static/images/inner_sanct_logo_100px.png"
+              "logo": "https://innersanctuaryfitness.com/images/inner_sanct_logo_100px.png"
             }`,
           }
 }

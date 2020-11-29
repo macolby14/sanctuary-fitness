@@ -12,13 +12,13 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 const images = [
   {
-    src: '/static/images/gallery1_6240_4160_gimp_tiny.jpg', alt: 'Filler Image 3', width: 6240, height: 4160,
+    src: '/images/gallery1_6240_4160_gimp_tiny.jpg', alt: 'Filler Image 3', width: 6240, height: 4160,
   },
   {
-    src: '/static/images/gallery2_5862_3424_gimp_tiny.jpg', alt: 'Filler Image 1', width: 5862, height: 3424,
+    src: '/images/gallery2_5862_3424_gimp_tiny.jpg', alt: 'Filler Image 1', width: 5862, height: 3424,
   },
   {
-    src: '/static/images/gallery3_5768_4160_gimp_tiny.jpg', alt: 'Filler Image 2', width: 5768, height: 4160,
+    src: '/images/gallery3_5768_4160_gimp_tiny.jpg', alt: 'Filler Image 2', width: 5768, height: 4160,
   },
 ];
 

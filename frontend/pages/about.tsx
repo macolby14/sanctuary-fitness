@@ -55,7 +55,7 @@ export default function About() {
             <em>soul</em>
             .
           </Typography>
-          <Image src="/static/images/aboutme_3000_2000_tiny.jpg" alt="About Me photo" width={3000} height={2000} />
+          <Image src="/images/aboutme_3000_2000_tiny.jpg" alt="About Me photo" width={3000} height={2000} />
         </div>
         <div className={classes.splitContainer}>
           <Typography variant="body1">

@@ -13,7 +13,7 @@ createConnection().then((connection) => {
   app.use(cors());
 
   // Serve static files from public -> served under static url
-  app.use('/static', express.static(path.join(__dirname, 'public')));
+  app.use('/', express.static(path.join(__dirname, 'public')));
 
   app.get('/courses/:date', async (req: Request, res: Response) => {
     const results = await courseRepository.find({ where: { date: req.params.date } });
