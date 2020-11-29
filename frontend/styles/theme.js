@@ -1,5 +1,7 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
+import { cardo, cardoBold } from './fonts.js';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -20,6 +22,13 @@ const theme = createMuiTheme({
       'serif',
       'sans-serif',
     ].join(','),
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [cardo, cardoBold],
+      },
+    },
   },
 });
 const responsiveTheme = responsiveFontSizes(theme);
