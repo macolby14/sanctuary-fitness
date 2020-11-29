@@ -6,7 +6,6 @@ import Head from 'next/head';
 import { Container, CssBaseline } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 
-import '../styles/global.css';
 import MyAppBar from '../components/my-app-bar';
 import Footer from '../components/footer';
 import theme from '../styles/theme.js';
