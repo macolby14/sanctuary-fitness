@@ -27,7 +27,7 @@ export const cardoBold = {
 
 export const cardoItalic = {
   fontFamily: 'Cardo',
-  fontStyle: 'italic, oblique',
+  fontStyle: 'italic',
   fontDisplay: 'swap',
   fontWeight: 400,
   src: `
