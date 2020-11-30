@@ -12,13 +12,13 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 const images = [
   {
-    src: '/images/gallery1_1500_1000_gimp_tiny.jpg', alt: 'Filler Image 3', width: 1500, height: 1000,
+    src: '/images/gallery1_1500_1000_gimp_tiny.jpg', alt: 'Woman stretching with hands overhead on the beach and sunset in background.', width: 1500, height: 1000,
   },
   {
-    src: '/images/gallery2_1500_876_gimp_tiny.jpg', alt: 'Filler Image 1', width: 1500, height: 876,
+    src: '/images/gallery2_1500_876_gimp_tiny.jpg', alt: 'Woman stretching with hands out to her sides in the water with sunset in background.', width: 1500, height: 876,
   },
   {
-    src: '/images/gallery3_1500_1082_gimp_tiny.jpg', alt: 'Filler Image 2', width: 1500, height: 1082,
+    src: '/images/gallery3_1500_1082_gimp_tiny.jpg', alt: 'Woman stretching on beach with a cross with Jesus on it in the foreground.', width: 1500, height: 1082,
   },
 ];
 

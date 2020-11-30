@@ -55,7 +55,7 @@ export default function About() {
             <em>soul</em>
             .
           </Typography>
-          <Image src="/images/aboutme_1500_1000_gimp_tiny.jpg" alt="About Me photo" width={1500} height={1000} />
+          <Image src="/images/aboutme_1500_1000_gimp_tiny.jpg" alt="Kimberly standing in the water on the beach in Hawaii with small islands in the background." width={1500} height={1000} />
         </div>
         <div className={classes.splitContainer}>
           <Typography variant="body1">
